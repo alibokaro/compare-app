@@ -26,8 +26,8 @@ const DifferencesTable: React.FC<Props> = ({ data }) => {
         <tbody>
           {data && Object.entries(data).map(([id, { file1, file2 }]) => (
             <tr key={id}> 
-              <td className="py-2 px-4 border">{file1 ? `${id}:${file1}` : 'No data'}</td>
-              <td className="py-2 px-4 border">{file2 ? `${id}:${file2}` :'No data'}</td>
+              <td className="py-2 px-4 border">{file1 ? `${id}:${file1}` : `No Match found data start with ${id} in file1`}</td>
+              <td className="py-2 px-4 border">{file2 ? `${id}:${file2}` :`No Match found data start with ${id} in file2`}</td>
             </tr>
           ))}
         </tbody>
