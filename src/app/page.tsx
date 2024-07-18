@@ -9,7 +9,7 @@ const Home = () => {
   const [error, setError] = useState<string | null>(null);
   const [response, setResponse] = useState<any>(null);
 
-  const allowedExtensions = ['txt', 'pdf', 'docx'];
+  const allowedExtensions = ['txt'];
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, setFile: React.Dispatch<React.SetStateAction<File | null>>) => {
     const file = e.target.files?.[0] || null;
@@ -57,11 +57,11 @@ const Home = () => {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block mb-2">File 1:</label>
-          <input type="file" onChange={(e) => handleFileChange(e, setFile1)} className="block w-full" />
+          <input type="file" onChange={(e) => handleFileChange(e, setFile1)} accept=".txt" className="block w-full" />
         </div>
         <div>
           <label className="block mb-2">File 2:</label>
-          <input type="file" onChange={(e) => handleFileChange(e, setFile2)} className="block w-full" />
+          <input type="file" onChange={(e) => handleFileChange(e, setFile2)} accept=".txt" className="block w-full" />
         </div>
         {error && <div className="text-red-500">{error}</div>}
         <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded">Compare</button>
